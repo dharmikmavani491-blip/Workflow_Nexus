@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.core.database import engine, Base, SessionLocal
-from app.api import tasks, workflows, solutions, knowledge, agent, admin
+from app.api import tasks, workflows, solutions, knowledge, agent, admin, learning
 from app.services.dataset_ingestion import DatasetIngestionService
 
 # Create database tables
@@ -47,6 +47,7 @@ app.include_router(solutions.router, prefix="/api")
 app.include_router(knowledge.router, prefix="/api")
 app.include_router(agent.router, prefix="/api")
 app.include_router(admin.router, prefix="/api")
+app.include_router(learning.router, prefix="/api")
 
 @app.get("/api/health")
 def health_check():

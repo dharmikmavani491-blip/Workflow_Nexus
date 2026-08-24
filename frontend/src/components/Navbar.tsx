@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Compass, Network, Database, ShieldCheck, Cpu, History } from 'lucide-react';
+import { Compass, Network, Database, ShieldCheck, Cpu, History, Sparkles } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const location = useLocation();
@@ -9,6 +9,7 @@ export const Navbar: React.FC = () => {
     { path: '/', label: 'Workflow Strategist', icon: Compass },
     { path: '/history', label: 'Prompt History', icon: History },
     { path: '/knowledge', label: 'Solution Knowledge', icon: Database },
+    { path: '/learning', label: 'Auto-Improvement', icon: Sparkles },
     { path: '/simulation', label: 'Adaptive Simulator', icon: Network },
     { path: '/admin', label: 'Governance & Feedback', icon: ShieldCheck },
   ];

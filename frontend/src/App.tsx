@@ -6,6 +6,7 @@ import { KnowledgePage } from './pages/KnowledgePage';
 import { AdminPage } from './pages/AdminPage';
 import { ExecutionPage } from './pages/ExecutionPage';
 import { HistoryPage } from './pages/HistoryPage';
+import { AutoImprovementPage } from './pages/AutoImprovementPage';
 
 export const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ export const App: React.FC = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/history" element={<HistoryPage />} />
             <Route path="/knowledge" element={<KnowledgePage />} />
+            <Route path="/learning" element={<AutoImprovementPage />} />
             <Route path="/simulation" element={<ExecutionPage />} />
             <Route path="/admin" element={<AdminPage />} />
           </Routes>
