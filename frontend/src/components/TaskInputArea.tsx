@@ -26,11 +26,17 @@ export const TaskInputArea: React.FC<TaskInputAreaProps> = ({ onGenerate, isLoad
 
   const examplePrompts = [
     { label: 'BMW M5 CS Image (Social)', text: 'Create BMW M5 CS car image for Instagram' },
-    { label: 'Convert PDF to Word', text: 'Convert PDF to Word' },
-    { label: 'Build E-Commerce Store', text: 'Build an e-commerce website' },
-    { label: 'Research SaaS Database', text: 'Research the best database for a SaaS application' },
-    { label: 'Build Python REST API', text: 'Build a Python REST API' },
-    { label: 'Analyze CSV & Dashboard', text: 'Analyze a CSV and create a dashboard' },
+    { label: 'Full-Stack SaaS (Stripe & Supabase)', text: 'Build a full-stack SaaS with Stripe payments, Supabase auth, and Tailwind CSS' },
+    { label: 'Fine-Tune Local Llama 3.3', text: 'Fine-tune Llama 3.3 on technical documentation using Unsloth and Ollama' },
+    { label: 'DuckDB Analytics Dashboard', text: 'Analyze a 500MB CSV dataset, run aggregation queries with DuckDB, and build a Streamlit dashboard' },
+    { label: 'AI Voice Support Agent', text: 'Build an autonomous real-time voice customer support agent with Retell AI and Twilio' },
+    { label: 'Convert & OCR PDF to Word', text: 'Convert scanned multi-page PDF to editable Word document with OCR' },
+    { label: 'Cloud Cybersecurity Audit', text: 'Run an automated SAIF security scan on cloud storage buckets and generate a compliance report' },
+    { label: 'Cinematic VFX Video + Suno Audio', text: 'Generate a cinematic product video with Kling AI and compose custom background soundtrack using Suno AI' },
+    { label: '3D Blender Model to UE5', text: 'Model a low-poly asset in Blender 4.2 and export as GLTF for Unreal Engine 5' },
+    { label: 'Deep Research: LangGraph vs CrewAI', text: 'Conduct exhaustive comparative research on LangGraph vs CrewAI vs AutoGen for enterprise pipelines' },
+    { label: 'Autonomous Browser Scraper', text: 'Scrape real estate listings with Playwright and extract structured JSON with Gemini 2.5 Flash' },
+    { label: 'HFT Quant Market Arbitrage', text: 'Implement a real-time WebSocket crypto order book arbitrage bot with Python and Redis' },
   ];
 
   const optimizationModes = [
