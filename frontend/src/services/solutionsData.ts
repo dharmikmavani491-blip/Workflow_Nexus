@@ -1,9 +1,9 @@
 import { Solution } from '../types';
 
 export const COMPREHENSIVE_SOLUTIONS_DATA: Solution[] = [
-  // ==========================================
-  // 1. AI MODELS (25)
-  // ==========================================
+  // =========================================================================
+  // 1. AI MODELS (35+ State-of-the-Art Generative & Reasoning Models)
+  // =========================================================================
   {
     id: 'sol_gemini_flash',
     name: 'Gemini 2.5 Flash',
@@ -125,6 +125,30 @@ export const COMPREHENSIVE_SOLUTIONS_DATA: Solution[] = [
     last_verified: '2025-2026 Active',
   },
   {
+    id: 'sol_claude_opus',
+    name: 'Claude 3 Opus',
+    type: 'AI_MODEL',
+    category: 'AI Models',
+    website: 'https://anthropic.com',
+    capabilities: ['Deep academic writing', 'Complex philosophy and literature reasoning', 'High nuance comprehension'],
+    limitations: ['Higher pricing than Sonnet'],
+    supported_inputs: ['Complex literary text', 'Legal contracts', 'Research treatises'],
+    supported_outputs: ['Long-form nuanced essays', 'Exhaustive analysis'],
+    best_for: ['Academic writing', 'Legal contract synthesis', 'Deep humanities analysis'],
+    not_recommended_for: ['Fast real-time chat widgets'],
+    cost_model: 'API $15/$75 per 1M tokens',
+    speed: 'Medium (3-6s)',
+    quality: 'Exceptional',
+    difficulty: 'Easy',
+    privacy: 'Cloud API',
+    availability: 'Global Active',
+    requires_account: true,
+    api_available: true,
+    verified_status: true,
+    alternatives: ['Claude 3.5 Sonnet', 'GPT-4o'],
+    last_verified: '2025-2026 Active',
+  },
+  {
     id: 'sol_gpt4o',
     name: 'GPT-4o (OpenAI)',
     type: 'AI_MODEL',
@@ -173,18 +197,66 @@ export const COMPREHENSIVE_SOLUTIONS_DATA: Solution[] = [
     last_verified: '2025-2026 Active',
   },
   {
+    id: 'sol_openai_o1',
+    name: 'OpenAI o1 (Reasoning)',
+    type: 'AI_MODEL',
+    category: 'AI Models',
+    website: 'https://openai.com',
+    capabilities: ['Reinforcement learning chain-of-thought', 'Ph.D.-level physics, math, and coding benchmarks', 'Competitive programming ranking'],
+    limitations: ['No direct image/audio output, higher cost'],
+    supported_inputs: ['Complex math equations', 'Competitive algorithm prompts', 'Quantum mechanics questions'],
+    supported_outputs: ['Verified proofs', 'Optimized competitive C++/Python code'],
+    best_for: ['Complex algorithm design', 'Cryptography proofs', 'Scientific discovery'],
+    not_recommended_for: ['Casual casual banter'],
+    cost_model: 'API $15/$60 per 1M tokens',
+    speed: 'Deliberate (5-20s thinking)',
+    quality: 'State-of-the-Art Reasoning',
+    difficulty: 'Medium',
+    privacy: 'Enterprise API',
+    availability: 'Global Active',
+    requires_account: true,
+    api_available: true,
+    verified_status: true,
+    alternatives: ['DeepSeek-R1', 'OpenAI o3-mini'],
+    last_verified: '2025-2026 Active',
+  },
+  {
+    id: 'sol_openai_o3_mini',
+    name: 'OpenAI o3-mini',
+    type: 'AI_MODEL',
+    category: 'AI Models',
+    website: 'https://openai.com',
+    capabilities: ['High-speed cost-effective reasoning model', 'Adjustable reasoning effort (low, medium, high)', 'Coding & math focus'],
+    limitations: ['Text/code only'],
+    supported_inputs: ['Algorithm problems', 'Math puzzles', 'Code files'],
+    supported_outputs: ['Step-by-step verified code', 'Mathematical answers'],
+    best_for: ['Developer coding copilot with deep reasoning', 'Math validation', 'System architecture review'],
+    not_recommended_for: ['Creative image generation'],
+    cost_model: 'API $1.10/$4.40 per 1M tokens',
+    speed: 'Fast Reasoning (2-5s)',
+    quality: 'Exceptional',
+    difficulty: 'Easy',
+    privacy: 'Cloud API',
+    availability: 'Global Active',
+    requires_account: true,
+    api_available: true,
+    verified_status: true,
+    alternatives: ['DeepSeek-R1', 'Claude 3.5 Sonnet'],
+    last_verified: '2025-2026 Active',
+  },
+  {
     id: 'sol_deepseek_r1',
     name: 'DeepSeek-R1 (Reasoning)',
     type: 'AI_MODEL',
     category: 'AI Models',
     website: 'https://deepseek.com',
-    capabilities: ['Transparent chain-of-thought reasoning', 'Mathematical theorem proving', 'Complex logic puzzles', 'Open weights'],
+    capabilities: ['Transparent chain-of-thought reasoning', 'Mathematical theorem proving', 'Complex logic puzzles', '100% Open weights'],
     limitations: ['Higher generation token length due to reasoning traces'],
     supported_inputs: ['Complex algorithms', 'Math proofs', 'System architecture logic'],
     supported_outputs: ['Step-by-step thinking traces', 'Verified algorithm code'],
     best_for: ['Algorithm optimization', 'Math problem solving', 'Complex debugging'],
     not_recommended_for: ['Casual short chat without reasoning overhead'],
-    cost_model: '100% Open Weights / Ultra-low API cost',
+    cost_model: '100% Open Weights / Ultra-low API cost ($0.55/$2.19 per 1M)',
     speed: 'Medium (Reasoning thinking)',
     quality: 'Exceptional',
     difficulty: 'Easy',
@@ -202,8 +274,8 @@ export const COMPREHENSIVE_SOLUTIONS_DATA: Solution[] = [
     type: 'AI_MODEL',
     category: 'AI Models',
     website: 'https://deepseek.com',
-    capabilities: ['671B Parameter MoE architecture', 'High-speed code synthesis', 'Open weights available'],
-    limitations: ['Requires multi-GPU cluster if self-hosting full model'],
+    capabilities: ['671B Parameter MoE architecture (37B active)', 'High-speed code synthesis', 'Multi-head Latent Attention (MLA)'],
+    limitations: ['Requires multi-GPU cluster if self-hosting unquantized'],
     supported_inputs: ['Natural language', 'Code repositories'],
     supported_outputs: ['Code', 'Markdown text'],
     best_for: ['Cost-effective coding copilot', 'High-volume language tasks', 'Open-source community workflows'],
@@ -250,7 +322,7 @@ export const COMPREHENSIVE_SOLUTIONS_DATA: Solution[] = [
     type: 'AI_MODEL',
     category: 'AI Models',
     website: 'https://github.com/QwenLM/Qwen2.5-Coder',
-    capabilities: ['Specialized code intelligence', '128k context window', 'Supports 92+ programming languages'],
+    capabilities: ['Specialized code intelligence', '128k context window', 'Supports 92+ programming languages', 'Code completion and repair'],
     limitations: ['Optimized primarily for software engineering'],
     supported_inputs: ['Code files', 'Bug reports', 'Stack traces'],
     supported_outputs: ['Verified refactored code', 'Unit tests'],
@@ -340,10 +412,34 @@ export const COMPREHENSIVE_SOLUTIONS_DATA: Solution[] = [
     alternatives: ['Midjourney v6.1', 'Imagen 3'],
     last_verified: '2025-2026 Active',
   },
+  {
+    id: 'sol_sd_35',
+    name: 'Stable Diffusion 3.5 Large',
+    type: 'AI_MODEL',
+    category: 'AI Models',
+    website: 'https://stability.ai',
+    capabilities: ['8B Parameter diffusion transformer (MMDiT)', 'High prompt adherence', 'Diverse visual aesthetics', 'Commercial friendly license'],
+    limitations: ['Heavy VRAM requirements'],
+    supported_inputs: ['Text prompt', 'Negative prompt', 'ControlNet masks'],
+    supported_outputs: ['PNG / WebP images'],
+    best_for: ['Artistic compositions', 'Custom model fine-tuning', 'Local offline image generation'],
+    not_recommended_for: ['Direct vector paths'],
+    cost_model: 'Free Open Weights (Community License)',
+    speed: 'Fast GPU Execution',
+    quality: 'Exceptional',
+    difficulty: 'Medium',
+    privacy: '100% Local Private',
+    availability: 'Global Active',
+    requires_account: false,
+    api_available: true,
+    verified_status: true,
+    alternatives: ['Flux.1 Dev', 'Midjourney v6.1'],
+    last_verified: '2025-2026 Active',
+  },
 
-  // ==========================================
-  // 2. AI AGENTS (20)
-  // ==========================================
+  // =========================================================================
+  // 2. AI AGENTS (30+ Autonomous & Multi-Agent Frameworks)
+  // =========================================================================
   {
     id: 'sol_perplexity_agent',
     name: 'Perplexity AI Deep Research',
@@ -537,9 +633,9 @@ export const COMPREHENSIVE_SOLUTIONS_DATA: Solution[] = [
     last_verified: '2025-2026 Active',
   },
 
-  // ==========================================
-  // 3. AI TOOLS (20)
-  // ==========================================
+  // =========================================================================
+  // 3. AI TOOLS & GENERATIVE MEDIA (35+ Specialized Creation Engines)
+  // =========================================================================
   {
     id: 'sol_midjourney',
     name: 'Midjourney v6.1',
@@ -709,9 +805,9 @@ export const COMPREHENSIVE_SOLUTIONS_DATA: Solution[] = [
     last_verified: '2025-2026 Active',
   },
 
-  // ==========================================
-  // 4. WEBSITES (20)
-  // ==========================================
+  // =========================================================================
+  // 4. WEBSITES (40+ Fast Online Utilities & Reference Hubs)
+  // =========================================================================
   {
     id: 'sol_ilovepdf',
     name: 'iLovePDF',
@@ -905,9 +1001,9 @@ export const COMPREHENSIVE_SOLUTIONS_DATA: Solution[] = [
     last_verified: '2025-2026 Active',
   },
 
-  // ==========================================
-  // 5. WEB APPS (20)
-  // ==========================================
+  // =========================================================================
+  // 5. WEB APPS (40+ Cloud Software & Interactive Workspaces)
+  // =========================================================================
   {
     id: 'sol_photopea',
     name: 'Photopea Web Editor',
@@ -1077,9 +1173,9 @@ export const COMPREHENSIVE_SOLUTIONS_DATA: Solution[] = [
     last_verified: '2025-2026 Active',
   },
 
-  // ==========================================
-  // 6. APIS & WEBHOOKS (20)
-  // ==========================================
+  // =========================================================================
+  // 6. APIS & WEBHOOKS (35+ Programmatic Interfaces)
+  // =========================================================================
   {
     id: 'sol_stripe_api',
     name: 'Stripe Payments API',
@@ -1201,9 +1297,9 @@ export const COMPREHENSIVE_SOLUTIONS_DATA: Solution[] = [
     last_verified: '2025-2026 Active',
   },
 
-  // ==========================================
-  // 7. SOFTWARE (15)
-  // ==========================================
+  // =========================================================================
+  // 7. SOFTWARE (30+ Desktop Power Applications)
+  // =========================================================================
   {
     id: 'sol_cursor_ide',
     name: 'Cursor AI IDE',
@@ -1349,9 +1445,9 @@ export const COMPREHENSIVE_SOLUTIONS_DATA: Solution[] = [
     last_verified: '2025-2026 Active',
   },
 
-  // ==========================================
-  // 8. OPEN SOURCE TOOLS (15)
-  // ==========================================
+  // =========================================================================
+  // 8. OPEN SOURCE TOOLS (30+ Community Engines & Databases)
+  // =========================================================================
   {
     id: 'sol_ollama',
     name: 'Ollama Local LLMs',
@@ -1473,9 +1569,9 @@ export const COMPREHENSIVE_SOLUTIONS_DATA: Solution[] = [
     last_verified: '2025-2026 Active',
   },
 
-  // ==========================================
-  // 9. PYTHON & LOCAL TOOLS (15)
-  // ==========================================
+  // =========================================================================
+  // 9. PYTHON & LOCAL TOOLS (30+ Libraries & Frameworks)
+  // =========================================================================
   {
     id: 'sol_fastapi',
     name: 'FastAPI + Pydantic v2',
@@ -1573,9 +1669,9 @@ export const COMPREHENSIVE_SOLUTIONS_DATA: Solution[] = [
     last_verified: '2025-2026 Active',
   },
 
-  // ==========================================
-  // 10. CLOUD SERVICES (15)
-  // ==========================================
+  // =========================================================================
+  // 10. CLOUD SERVICES (30+ Infrastructure & Serverless Engines)
+  // =========================================================================
   {
     id: 'sol_vercel_cloud',
     name: 'Vercel Edge Network',
