@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Sparkles, ShieldCheck, CheckCircle2, PlayCircle, History, Star, Send } from 'lucide-react';
+import { Sparkles, ShieldCheck, CheckCircle2, PlayCircle, History, Star, Send, FileDown } from 'lucide-react';
 import { WorkflowData } from '../types';
 import { StepCard } from './StepCard';
 import { PhaseContainer } from './PhaseContainer';
 import { api } from '../services/api';
+import { exportWorkflowToPDF } from '../services/pdfExportService';
 
 interface WorkflowTimelineProps {
   workflow: WorkflowData;
@@ -22,6 +23,18 @@ export const WorkflowTimeline: React.FC<WorkflowTimelineProps> = ({
   const [inlineComment, setInlineComment] = useState('');
   const [isSubmittingFeedback, setIsSubmittingFeedback] = useState(false);
   const [inlineSubmitted, setInlineSubmitted] = useState(false);
+  const [isExportingPdf, setIsExportingPdf] = useState(false);
+
+  const handleDownloadPdf = () => {
+    setIsExportingPdf(true);
+    try {
+      exportWorkflowToPDF(workflow);
+    } catch (err) {
+      console.error('PDF export error', err);
+    } finally {
+      setTimeout(() => setIsExportingPdf(false), 1000);
+    }
+  };
 
   const handleInlineFeedbackSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,6 +73,16 @@ export const WorkflowTimeline: React.FC<WorkflowTimelineProps> = ({
           </div>
 
           <div className="flex flex-wrap items-center gap-2 shrink-0">
+            <button
+              onClick={handleDownloadPdf}
+              disabled={isExportingPdf}
+              className="px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs shadow-sm flex items-center gap-2 transition-all cursor-pointer"
+              title="Download full workflow intelligence document as PDF"
+            >
+              <FileDown className={`w-4 h-4 text-emerald-400 ${isExportingPdf ? 'animate-bounce' : ''}`} />
+              <span>{isExportingPdf ? 'Generating PDF...' : 'Download PDF'}</span>
+            </button>
+
             <button
               onClick={onOpenSimulation}
               className="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-semibold text-xs shadow-sm flex items-center gap-2 transition-all cursor-pointer"
