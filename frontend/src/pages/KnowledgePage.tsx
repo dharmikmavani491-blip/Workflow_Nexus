@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Database, RefreshCw, Layers, CheckCircle2 } from 'lucide-react';
 import { KnowledgeStats } from '../components/KnowledgeStats';
 import { SolutionExplorer } from '../components/SolutionExplorer';
-import { AgentIntelligenceShowcase } from '../components/AgentIntelligenceShowcase';
 import { KnowledgeStats as KnowledgeStatsType } from '../types';
 import { api } from '../services/api';
 
@@ -33,7 +32,7 @@ export const KnowledgePage: React.FC = () => {
     setSyncMessage(null);
     try {
       const res = await api.triggerDatasetImport();
-      setSyncMessage(`Synced ${res.dataset_1_records + res.dataset_2_records} workflow records across 24 domains.`);
+      setSyncMessage(`Synced ${res.dataset_1_records + res.dataset_2_records} workflow records across 32 enterprise domains.`);
       await loadStats();
       setTimeout(() => setSyncMessage(null), 4000);
     } catch (err: any) {
@@ -78,11 +77,8 @@ export const KnowledgePage: React.FC = () => {
         </div>
       )}
 
-      {/* Real-time Dataset Stats */}
+      {/* Real-time Dataset Stats across 32 Domains */}
       <KnowledgeStats stats={stats} loading={loading} />
-
-      {/* Real Autonomous Agent Intelligence Showcase */}
-      <AgentIntelligenceShowcase />
 
       {/* Searchable Solutions Directory */}
       <SolutionExplorer />
