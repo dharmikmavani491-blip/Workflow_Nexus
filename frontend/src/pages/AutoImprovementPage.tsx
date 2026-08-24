@@ -14,6 +14,7 @@ import {
   Database,
 } from 'lucide-react';
 import axios from 'axios';
+import { AgentAccuracyGraph } from '../components/AgentAccuracyGraph';
 
 interface ToolRanking {
   tool: string;
@@ -214,6 +215,9 @@ export const AutoImprovementPage: React.FC = () => {
           <span className="text-[11px] text-purple-700 font-medium">Automated error mitigation</span>
         </div>
       </div>
+
+      {/* Real-time Agent Prediction Accuracy & Performance Graph */}
+      <AgentAccuracyGraph />
 
       {/* Auto-Synthesized Decision Policies */}
       <div className="space-y-4">
